@@ -1,0 +1,1 @@
+TODO: This markdown document will serve as the primary source-of-truth for the design of the bot, emphasizing what features are in scope, tools and packages it may use in implementation, and diagraming any business logic flows between systems (e.g. this bot to and from Discord API).
