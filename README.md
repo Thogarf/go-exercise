@@ -4,7 +4,7 @@
 
 A lightweight Discord bot written in Go. Stores exercise routine information, publishes scheduled reminders.
 
-This project is written in Go, follow instructions to install [here](https://golang.google.cn/doc/install).
+This project is written in Go, follow instructions to install [here](https://golang.google.cn/doc/install). At the time of writing, this bot is intended to be developed only as an open-source, self-hosted tool, there are no current intentions to host this bot as a service.
 
 ## Build and run
 
