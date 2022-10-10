@@ -1,0 +1,21 @@
+# syntax=docker/dockerfile:1
+
+# multi-stage builder
+FROM golang:1.19-alpine as builder
+
+WORKDIR $GOPATH/src/go-exercise
+
+COPY go.mod .
+COPY src/ .
+
+RUN go mod download
+RUN go mod verify
+
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o /go-exercise .
+
+# finalized container
+FROM alpine:3.16
+
+COPY --from=builder /go-exercise .
+
+CMD ["./go-exercise"]
