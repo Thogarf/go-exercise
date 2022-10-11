@@ -1,5 +1,8 @@
 # syntax=docker/dockerfile:1
 
+# Default BASE_IMAGE
+ARG BASE_IMAGE=gcr.io/distroless/static
+
 # multi-stage builder
 FROM golang:1.19-alpine as builder
 
@@ -14,7 +17,7 @@ RUN go mod verify
 RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o /go-exercise .
 
 # finalized container
-FROM gcr.io/distroless/static-debian11
+FROM $BASE_IMAGE
 
 COPY --from=builder /go-exercise .
 
