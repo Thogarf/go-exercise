@@ -11,5 +11,8 @@
 # Output of the go coverage tool, specifically when used with LiteIDE
 *.out
 
+# Environment variable file that hosts the Discord Bot Token
+.env
+
 # Dependency directories (remove the comment below to include it)
 # vendor/
