@@ -1,0 +1,8 @@
+version: '3.8'
+
+services:
+
+  go-exercise:
+    image: "gobot"
+    env_file:
+      - .env
